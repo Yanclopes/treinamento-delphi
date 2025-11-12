@@ -1,0 +1,81 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Math;
+
+type
+  Tfrm = class(TForm)
+    lbl: TLabel;
+    procedure FormCreate(Sender: TObject);
+  private
+    procedure calc();
+    function subCalc(pValue: Integer): Double;
+    { Private declarations }
+  public
+    constructor Create(AOwner: TComponent);
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+constructor Tfrm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  // Você PRECISA dessas duas linhas.
+  // A primeira cria o 'lbl' na memória.
+  lbl := TLabel.Create(Self);
+  // A segunda (ESSA É A QUE MUITOS ESQUECEM)
+  // diz onde o label deve ser desenhado (no Form).
+  lbl.Parent := Self;
+
+  // Vamos dar uma posição a ele.
+  lbl.Top := 10;
+  lbl.Left := 10;
+  // --- FIM DA CORREÇÃO ---
+
+  calc();
+end;
+
+procedure Tfrm.FormCreate(Sender: TObject);
+begin
+  calc();
+end;
+procedure Tfrm.calc();
+var
+  Resultado: Double;
+begin
+  // 1. Primeiro, fazemos o cálculo
+  Resultado := subCalc(6) + subCalc(13) + subCalc(21);
+
+  // 2. Vamos exibir o resultado em um Pop-up
+  //    Se esta mensagem aparecer, o cálculo e a unit Math estão OK.
+  ShowMessage('O resultado é: ' + FloatToStr(Resultado));
+
+  // 3. AGORA, vamos testar o 'lbl'
+  if lbl = nil then
+  begin
+    // Se o lbl for 'nil', esta mensagem vai aparecer.
+    ShowMessage('ERRO: O componente "lbl" é NIL (não existe).');
+  end
+  else
+  begin
+    // Se ele existir, o caption será alterado.
+    lbl.Caption := FloatToStr(Resultado);
+    ShowMessage('SUCESSO: Caption alterado.');
+  end;
+end;
+
+function Tfrm.subCalc(pValue: Integer): Double;
+begin
+  Result:= (Sqrt(pValue) + pValue) / 2
+end;
+
+end.

@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2025/11/12 09:46:05.487,=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2025/11/12 09:46:21.112,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\atividade2_3.dproj=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>2025/11/12 09:47:09.379,C:\Users\Yan.lopes\Desktop\gerenciador atividades\2.3\Form.pas=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2025/11/12 09:47:09.379,C:\Users\Yan.lopes\Desktop\gerenciador atividades\2.3\Form.dfm=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit2.dfm</Transaction>
-    <Transaction>2025/11/12 09:47:17.771,C:\Users\Yan.lopes\Desktop\gerenciador atividades\2.3\atividade2_3.dproj=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\atividade2_3.dproj</Transaction>
+	<Transactions>
+    <Transaction>2025/11/12 09:46:05.000.487,=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2025/11/12 09:46:21.000.112,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\atividade2_3.dproj</Transaction>
+    <Transaction>2025/11/12 09:47:09.000.379,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit2.pas=C:\Users\Yan.lopes\Desktop\gerenciador atividades\2.3\Form.pas</Transaction>
+    <Transaction>2025/11/12 09:47:09.000.379,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit2.dfm=C:\Users\Yan.lopes\Desktop\gerenciador atividades\2.3\Form.dfm</Transaction>
+    <Transaction>2025/11/12 09:47:17.000.771,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\atividade2_3.dproj=C:\Users\Yan.lopes\Desktop\gerenciador atividades\2.3\atividade2_3.dproj</Transaction>
   </Transactions>
 </BorlandProject>

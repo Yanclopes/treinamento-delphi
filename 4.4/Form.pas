@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, StdCtrls, Triangle, ExtCtrls;
+  Dialogs, StdCtrls, Triangle, ExtCtrls, ComCtrls;
 
 type
   Tfrm = class(TForm)
@@ -21,6 +21,8 @@ type
     edtYC: TEdit;
     btn: TButton;
     pb: TPaintBox;
+    pgc1: TPageControl;
+    ts: TTabSheet;
     procedure btnClick(Sender: TObject);
     procedure edtKeyPress(Sender: TObject; var Key: Char);
   private

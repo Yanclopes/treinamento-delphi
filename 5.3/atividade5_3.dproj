@@ -4,7 +4,7 @@
 			<MainSource>atividade5_3.dpr</MainSource>
 			<ProjectVersion>12.2</ProjectVersion>
 			<Base>True</Base>
-			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Config Condition="'$(Config)'==''">Release</Config>
 			<Platform>Win32</Platform>
 			<AppType>Application</AppType>
 			<FrameworkType>VCL</FrameworkType>
@@ -49,7 +49,7 @@
 			<DelphiCompile Include="atividade5_3.dpr">
 				<MainSource>MainSource</MainSource>
 			</DelphiCompile>
-			<DCCReference Include="..\5.1\Form.pas">
+			<DCCReference Include="Form.pas">
 				<Form>frm</Form>
 			</DCCReference>
 			<BuildConfiguration Include="Release">

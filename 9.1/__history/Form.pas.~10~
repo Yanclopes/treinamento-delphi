@@ -1,0 +1,50 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Math;
+
+type
+  Tfrm = class(TForm)
+    lbl: TLabel;
+  private
+    procedure calc();
+    function subCalc(pValue: Integer): Double;
+    { Private declarations }
+  public
+    constructor Create(AOwner: TComponent);
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+constructor Tfrm.Create(AOwner: TComponent);
+begin
+  inherited Create(AOwner);
+  lbl := TLabel.Create(Self); // 'Self' é o Form, o dono (Owner)
+  lbl.Parent := Self;         // 'Parent' diz onde ele será desenhado
+  lbl.Top := 10;              // Define uma Posição Y
+  lbl.Left := 10;             // Define uma Posição X
+  // ----------------------------
+
+  calc();
+end;
+
+procedure Tfrm.calc();
+begin
+  lbl.Caption := FloatToStr(subCalc(6) + subCalc(13) + subCalc(21));
+end;
+
+function Tfrm.subCalc(pValue: Integer): Double;
+begin
+  Result:= (Sqrt(pValue) + pValue) / 2
+end;
+
+end.

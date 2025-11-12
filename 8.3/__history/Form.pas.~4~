@@ -1,0 +1,51 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Math, StdCtrls, ExtCtrls;
+
+type
+  Tfrm = class(TForm)
+    btn: TButton;
+    lbledtA: TLabeledEdit;
+    lbledtB: TLabeledEdit;
+  function AreaAnel(R1, R2: Real): Real;
+  function AreaCirculo(Raio: Real): Real;
+  procedure btnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+function Tfrm.AreaAnel(R1, R2: Real): Real;
+begin
+  Result := Pi * (Sqr(R2) - Sqr(R1));
+end;
+
+function Tfrm.AreaCirculo(Raio: Real): Real;
+begin
+  Result := AreaAnel(0, Raio);
+end;
+
+procedure Tfrm.btnClick(Sender: TObject);
+var
+  vR1, vR2: Real;
+begin
+  vR1:= StrToFloat(lbledtA.Text);
+  vR2:= StrToFloat(lbledtB.Text);
+  ShowMessage('Area Anel: ' + AreaAnel(vR1, vR2) + sLineBreak +
+              'Area Interna: ' + AreaCirculo(vR1)
+  );
+end;
+
+end.

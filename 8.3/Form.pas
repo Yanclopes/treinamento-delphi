@@ -4,10 +4,16 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs;
+  Dialogs, Math, StdCtrls, ExtCtrls;
 
 type
   Tfrm = class(TForm)
+    btn: TButton;
+    lbledtA: TLabeledEdit;
+    lbledtB: TLabeledEdit;
+  function AreaAnel(R1, R2: Real): Real;
+  function AreaCirculo(Raio: Real): Real;
+  procedure btnClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -20,5 +26,26 @@ var
 implementation
 
 {$R *.dfm}
+
+function Tfrm.AreaAnel(R1, R2: Real): Real;
+begin
+  Result := Pi * (Sqr(R2) - Sqr(R1));
+end;
+
+function Tfrm.AreaCirculo(Raio: Real): Real;
+begin
+  Result := AreaAnel(0, Raio);
+end;
+
+procedure Tfrm.btnClick(Sender: TObject);
+var
+  vR1, vR2: Real;
+begin
+  vR1:= StrToFloat(lbledtA.Text);
+  vR2:= StrToFloat(lbledtB.Text);
+  ShowMessage('Area Anel: ' + FloatToStr(AreaAnel(vR1, vR2))   + sLineBreak +
+              'Area Interna: ' + FloatToStr(AreaCirculo(vR1))
+  );
+end;
 
 end.

@@ -13,7 +13,9 @@ type
     edtCapitulo: TEdit;
     edtNumero: TEdit;
     btn: TButton;
+    lblLink: TLabel;
     procedure btnClick(Sender: TObject);
+    procedure lblLinkClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -70,6 +72,11 @@ begin
     nil,
     SW_SHOWNORMAL
   );
+end;
+
+procedure TFrm.lblLinkClick(Sender: TObject);
+begin
+  ShellExecute(Handle, 'open', PChar('https://embarcaderobr.com.br/wp-content/uploads/2016/10/DelphiProgramming4Beginners_PTBR_1.1.pdf'), nil, nil, SW_SHOWNORMAL);
 end;
 
 end.

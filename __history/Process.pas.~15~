@@ -1,4 +1,4 @@
-unit Process;
+﻿unit Process;
 
 interface
 
@@ -31,32 +31,37 @@ procedure TFrm.btnClick(Sender: TObject);
 var
   sCapitulo, sNumero: Integer;
   sNomeBase, sNomeArquivo, sCaminhoExe: string;
-  sDiretorioBase, sSubPastaRelativa: string;
+  sDiretorioBaseExe, sRaizDoProjeto, sPastaCapitulo, sSubPastaRelativa: string;
 begin
-  if (not TryStrToInt(edtCapitulo.Text, sCapitulo)) or (not TryStrToInt(lblNumero.Text, sNumero))) then
+  if (not TryStrToInt(edtCapitulo.Text, sCapitulo)) or (not TryStrToInt(edtNumero.Text, sNumero)) then
   begin
-    ShowMessage('Por favor, preencha o cap�tulo e a atividade.');
+    ShowMessage('Por favor, preencha o capítulo e a atividade com números válidos.');
     Exit;
   end;
-  sNomeBase := IntToStr(sCapitulo)  + '.' + IntToStr(sNumero);
+
+  sNomeBase := IntToStr(sCapitulo) + '.' + IntToStr(sNumero);
   sNomeBase := StringReplace(sNomeBase, '.', '_', [rfReplaceAll]);
-
   sNomeArquivo := 'atividade' + sNomeBase + '.exe';
+  sDiretorioBaseExe := ExtractFilePath(Application.ExeName);
 
-  sDiretorioBase := ExtractFilePath(Application.ExeName);
 
-  sSubPastaRelativa := 'Release\Win32';
+  sRaizDoProjeto := ExtractFilePath(ExcludeTrailingPathDelimiter(
+                       ExtractFilePath(ExcludeTrailingPathDelimiter(sDiretorioBaseExe))
+                     ));
 
-  sCaminhoExe := IncludeTrailingPathDelimiter(sDiretorioBase);
+  sPastaCapitulo := IntToStr(sCapitulo) + '.' + IntToStr(sNumero);
+  sSubPastaRelativa := sPastaCapitulo + '\Release\Win32';
+
+  sCaminhoExe := IncludeTrailingPathDelimiter(sRaizDoProjeto);
   sCaminhoExe := sCaminhoExe + sSubPastaRelativa;
   sCaminhoExe := IncludeTrailingPathDelimiter(sCaminhoExe);
   sCaminhoExe := sCaminhoExe + sNomeArquivo;
-
   if not FileExists(sCaminhoExe) then
   begin
-    ShowMessage('Atividade n�o encontrada em: ' + sCaminhoExe);
+    ShowMessage('Atividade não encontrada em: ' + sCaminhoExe);
     Exit;
   end;
+
   ShellExecute(
     Handle,
     'open',
@@ -65,7 +70,6 @@ begin
     nil,
     SW_SHOWNORMAL
   );
-
 end;
 
 end.

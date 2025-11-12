@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2025/11/12 09:27:51.972,=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/11/12 09:28:19.873,C:\Users\Yan.lopes\Desktop\gerenciador atividades\Unit1.pas=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/11/12 09:28:19.873,C:\Users\Yan.lopes\Desktop\gerenciador atividades\Unit1.dfm=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2025/11/12 09:28:26.936,C:\Users\Yan.lopes\Desktop\gerenciador atividades\gerenciador.dproj=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>2025/11/12 09:29:45.861,C:\Users\Yan.lopes\Desktop\gerenciador atividades\gerenciador.pas=C:\Users\Yan.lopes\Desktop\gerenciador atividades\Unit1.pas</Transaction>
-    <Transaction>2025/11/12 09:29:45.861,C:\Users\Yan.lopes\Desktop\gerenciador atividades\gerenciador.dfm=C:\Users\Yan.lopes\Desktop\gerenciador atividades\Unit1.dfm</Transaction>
+	<Transactions>
+    <Transaction>2025/11/12 09:27:51.000.972,=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/11/12 09:28:19.000.873,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit1.dfm=C:\Users\Yan.lopes\Desktop\gerenciador atividades\Unit1.dfm</Transaction>
+    <Transaction>2025/11/12 09:28:19.000.873,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit1.pas=C:\Users\Yan.lopes\Desktop\gerenciador atividades\Unit1.pas</Transaction>
+    <Transaction>2025/11/12 09:28:26.000.936,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\Yan.lopes\Desktop\gerenciador atividades\gerenciador.dproj</Transaction>
+    <Transaction>2025/11/12 09:29:45.000.861,C:\Users\Yan.lopes\Desktop\gerenciador atividades\Unit1.pas=C:\Users\Yan.lopes\Desktop\gerenciador atividades\gerenciador.pas</Transaction>
+    <Transaction>2025/11/12 09:29:45.000.861,C:\Users\Yan.lopes\Desktop\gerenciador atividades\Unit1.dfm=C:\Users\Yan.lopes\Desktop\gerenciador atividades\gerenciador.dfm</Transaction>
   </Transactions>
 </BorlandProject>

@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2025/11/12 10:10:32.653,=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit3.pas</Transaction>
-    <Transaction>2025/11/12 10:10:41.505,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\atividade4_2.dproj=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>2025/11/12 10:10:46.475,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Form.pas=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit3.pas</Transaction>
-    <Transaction>2025/11/12 10:10:46.475,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Form.dfm=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit3.dfm</Transaction>
-    <Transaction>2025/11/12 10:10:56.365,C:\Users\Yan.lopes\Desktop\gerenciador atividades\4.2\Form.pas=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Form.pas</Transaction>
-    <Transaction>2025/11/12 10:10:56.365,C:\Users\Yan.lopes\Desktop\gerenciador atividades\4.2\Form.dfm=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Form.dfm</Transaction>
-    <Transaction>2025/11/12 10:10:58.402,C:\Users\Yan.lopes\Desktop\gerenciador atividades\4.2\atividade4_2.dproj=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\atividade4_2.dproj</Transaction>
+	<Transactions>
+    <Transaction>2025/11/12 10:10:32.000.653,=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit3.pas</Transaction>
+    <Transaction>2025/11/12 10:10:41.000.505,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Project1.dproj=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\atividade4_2.dproj</Transaction>
+    <Transaction>2025/11/12 10:10:46.000.475,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit3.pas=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Form.pas</Transaction>
+    <Transaction>2025/11/12 10:10:46.000.475,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit3.dfm=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Form.dfm</Transaction>
+    <Transaction>2025/11/12 10:10:56.000.365,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Form.dfm=C:\Users\Yan.lopes\Desktop\gerenciador atividades\4.2\Form.dfm</Transaction>
+    <Transaction>2025/11/12 10:10:56.000.365,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Form.pas=C:\Users\Yan.lopes\Desktop\gerenciador atividades\4.2\Form.pas</Transaction>
+    <Transaction>2025/11/12 10:10:58.000.402,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\atividade4_2.dproj=C:\Users\Yan.lopes\Desktop\gerenciador atividades\4.2\atividade4_2.dproj</Transaction>
   </Transactions>
 </BorlandProject>

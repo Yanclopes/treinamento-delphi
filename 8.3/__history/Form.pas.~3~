@@ -1,0 +1,36 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Math;
+
+type
+  TFrm = class(TForm)
+  function AreaAnel(R1, R2: Real): Real;
+  function AreaCirculo(Raio: Real): Real;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+function TFrm.AreaAnel(R1, R2: Real): Real;
+begin
+  Result := Pi * (Sqr(R2) - Sqr(R1));
+end;
+
+function TFrm.AreaCirculo(Raio: Real): Real;
+begin
+  Result := AreaAnel(0, Raio);
+end;
+
+end.

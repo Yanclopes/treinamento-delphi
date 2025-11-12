@@ -27,25 +27,42 @@ object Frm: TFrm
     Height = 13
     Caption = 'N'#250'mero'
   end
+  object lblLink: TLabel
+    Left = 94
+    Top = 117
+    Width = 85
+    Height = 26
+    Caption = 'Documenta'#231#227'o'#13#10
+    Color = clBlue
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlue
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold, fsUnderline]
+    ParentColor = False
+    ParentFont = False
+    OnClick = lblLinkClick
+  end
   object edtCapitulo: TEdit
     Left = 16
-    Top = 51
+    Top = 45
     Width = 121
     Height = 21
     TabOrder = 0
   end
   object edtNumero: TEdit
     Left = 143
-    Top = 51
+    Top = 45
     Width = 121
     Height = 21
     TabOrder = 1
   end
   object btn: TButton
-    Left = 104
-    Top = 96
+    Left = 94
+    Top = 86
     Width = 75
     Height = 25
+    Cursor = crHandPoint
     Caption = 'Abrir'
     TabOrder = 2
     OnClick = btnClick

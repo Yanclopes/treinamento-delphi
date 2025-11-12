@@ -147,4 +147,17 @@ object frm: Tfrm
     TabOrder = 6
     OnClick = btnClick
   end
+  object pgc1: TPageControl
+    Left = 72
+    Top = 24
+    Width = 289
+    Height = 193
+    ActivePage = ts
+    TabOrder = 7
+    object ts: TTabSheet
+      Caption = 'ts'
+      ExplicitLeft = -52
+      ExplicitTop = -12
+    end
+  end
 end
