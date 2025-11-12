@@ -1,0 +1,90 @@
+unit Process;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ShellAPI;
+
+type
+  TFrm = class(TForm)
+    lblCapitulo: TLabel;
+    lblNumero: TLabel;
+    edtCapitulo: TEdit;
+    edtNumero: TEdit;
+    btn: TButton;
+    procedure btnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: TFrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrm.btnClick(Sender: TObject);
+var
+  sCapitulo, sNumero: Integer;
+  sNomeBase, sNomeArquivo, sCaminhoExe: string;
+  sDiretorioBaseExe, sSubPastaRelativa, sRaizDoProjeto: string;
+begin
+  // 1. Valida e pega os números dos TEdits
+  if (not TryStrToInt(edtCapitulo.Text, sCapitulo)) or (not TryStrToInt(edtNumero.Text, sNumero)) then
+  begin
+    ShowMessage('Por favor, preencha o capítulo e a atividade com números válidos.');
+    Exit;
+  end;
+
+  // 2. Monta o nome do arquivo
+  // Transforma 7 e 1 em "7_1"
+  sNomeBase := IntToStr(sCapitulo) + '.' + IntToStr(sNumero);
+  sNomeBase := StringReplace(sNomeBase, '.', '_', [rfReplaceAll]);
+  // Transforma "7_1" em "atividade7_1.exe"
+  sNomeArquivo := 'atividade' + sNomeBase + '.exe';
+
+  // 3. Monta o caminho para o arquivo
+
+  // Pega o diretório onde este EXE (gerenciador) está rodando
+  // Ex: C:\...\Projeto\Release\Win32\
+  sDiretorioBaseExe := ExtractFilePath(Application.ExeName);
+
+  // "Volta" duas pastas para achar a raiz do projeto
+  // 1ª volta: para C:\...\Projeto\Release\
+  // 2ª volta: para C:\...\Projeto\
+  sRaizDoProjeto := ExtractFilePath(ExtractFilePath(sDiretorioBaseExe));
+
+  // Define a subpasta (relativa à raiz) onde as atividades estão
+  sSubPastaRelativa := 'Release\Win32';
+
+  // 4. Monta o caminho final a partir da RAIZ
+  // (Modo seguro, compatível com Delphi XE)
+  sCaminhoExe := IncludeTrailingPathDelimiter(sRaizDoProjeto);
+  sCaminhoExe := sCaminhoExe + sSubPastaRelativa;
+  sCaminhoExe := IncludeTrailingPathDelimiter(sCaminhoExe);
+  sCaminhoExe := sCaminhoExe + sNomeArquivo;
+
+  // Resultado esperado: C:\...\Projeto\Release\Win32\atividadeX_X.exe
+
+  // 5. Verifique e execute
+  if not FileExists(sCaminhoExe) then
+  begin
+    ShowMessage('Atividade não encontrada em: ' + sCaminhoExe);
+    Exit;
+  end;
+
+  ShellExecute(
+    Handle,
+    'open',
+    PChar(sCaminhoExe),
+    nil,
+    nil,
+    SW_SHOWNORMAL
+  );
+end;
+
+end.

@@ -1,0 +1,99 @@
+﻿unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls, StdCtrls, Triangle, ExtCtrls;
+
+type
+  Tfrm = class(TForm)
+    lblX: TLabel;
+    lblY: TLabel;
+    lblA: TLabel;
+    lblB: TLabel;
+    lblC: TLabel;
+    edtXA: TEdit;
+    edtYA: TEdit;
+    edtXB: TEdit;
+    edtYB: TEdit;
+    edtXC: TEdit;
+    edtYC: TEdit;
+    btn: TButton;
+    pb: TPaintBox;
+    procedure btnClick(Sender: TObject);
+    procedure edtKeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm.edtKeyPress(Sender: TObject; var Key: Char);
+var
+  TextoAtual: string;
+begin
+  TextoAtual := (Sender as TEdit).Text;
+  if NOT CharInSet(Key, ['0'..'9', #8]) then
+    if Key = FormatSettings.DecimalSeparator then
+      begin
+        if Pos(FormatSettings.DecimalSeparator, TextoAtual) > 0 then
+          Key := #0;
+      end
+    else
+        Key := #0;
+end;
+
+procedure Tfrm.btnClick(Sender: TObject);
+var
+  Triangle: TTriangle;
+  VerticeA, VerticeB, VerticeC: TVertice;
+  procedure validatePoint(edt: TEdit; var point: integer);
+  begin
+    if not TryStrToInt(edt.Text, point) then
+    begin
+      ShowMessage('Verifique os campos e tente novamente!');
+      edt.SetFocus;
+      Exit;
+    end;
+  end;
+begin
+  validatePoint(edtXA, VerticeA[0]);
+  validatePoint(edtYA, VerticeA[1]);
+
+  validatePoint(edtXB, VerticeB[0]);
+  validatePoint(edtYB, VerticeB[1]);
+
+  validatePoint(edtXC, VerticeC[0]);
+  validatePoint(edtYC, VerticeC[1]);
+
+  pb.Canvas.Pen.Color := clBlue;
+  pb.Canvas.Pen.Width := 3;
+
+
+  pb.Canvas.MoveTo(VerticeA[0], VerticeA[1]);
+
+
+  pb.Canvas.LineTo(VerticeB[0], VerticeB[1]);
+  pb.Canvas.LineTo(VerticeC[0], VerticeC[1]);
+  pb.Canvas.LineTo(VerticeA[0], VerticeA[1]);
+
+  Triangle := TTriangle.Create;
+  try
+    Triangle.setVertices(VerticeA, VerticeB, VerticeC);
+    ShowMessage('Per�metro: ' + FloatToStr(Triangle.GetPerimetro) + sLineBreak +
+                '�rea: ' + FloatToStr(Triangle.GetArea));
+  finally
+    Triangle.Free;
+  end;
+end;
+
+end.
+

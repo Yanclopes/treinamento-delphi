@@ -1,0 +1,43 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Math;
+
+type
+  Tfrm = class(TForm)
+    edtDistance: TEdit;
+    edtAngle: TEdit;
+    lbl: TLabel;
+    lblAngle: TLabel;
+    btn: TButton;
+    procedure btnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm.btnClick(Sender: TObject);
+var
+  vAngle, vDistance, vHeight: Double;
+begin
+  if (not TryStrToFloat(edtAngle.Text, vAngle)) or (not TryStrToFloat(edtDistance.Text, vDistance)) then
+  begin
+    ShowMessage('Verifique os Campos e tente novamente!');
+    Exit; 
+  end;
+  vHeight:= vDistance * Tan(DegToRad(vAngle));
+  ShowMessage('A altura da �rvore � igual a '+ FloatToStr(Trunc(vHeight))  +' m e '+ FloatToStr(Trunc((vHeight - Trunc(vHeight)) * 100)) +' cm'); 
+end;
+
+end.

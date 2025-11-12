@@ -1,0 +1,50 @@
+﻿unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  Tfrm = class(TForm)
+    btn: TButton;
+    edt: TEdit;
+    procedure btnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm.btnClick(Sender: TObject);
+var
+  vYear: Integer;
+begin
+  if (not TryStrToInt(edt.Text, vYear)) then
+  begin
+    ShowMessage('Verifique os valores e tente novamente!');
+    Exit;
+  end;
+
+  if vYear mod 4 = 0 then
+    begin
+      if (vYear mod 100 = 0) and (vYear mod 400 <> 0) then
+      begin
+        ShowMessage('n�o � bissexto');
+        Exit;
+      end;
+      ShowMessage('� bissexto');
+    end
+  else
+    ShowMessage('n�o � bissexto');
+end;
+
+end.

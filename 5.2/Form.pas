@@ -1,0 +1,78 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms, StdCtrls;
+
+type
+  Tfrm = class(TForm)
+    lblRed: TLabel;
+    lblYellow: TLabel;
+    lblGreen: TLabel;
+    btnRed: TButton;
+    btnYellow: TButton;
+    btnGreen: TButton;
+    procedure create(Sender: TObject);
+    procedure click(Sender: TObject);
+    function getLabelByCaption(name: string): TLabel;
+  private
+    activated: string;
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm.create(Sender: TObject);
+begin
+  btnRed.Caption := lblRed.Caption;
+  btnGreen.Caption := lblGreen.Caption;
+  btnYellow.Caption := lblYellow.Caption;
+  activated := lblRed.Caption;
+end;
+
+
+procedure Tfrm.click(Sender: TObject);
+var
+oldLabel: TLabel;
+newLabel: TLabel;
+btn: TButton;
+begin
+  oldLabel := getLabelByCaption(activated);
+  if oldLabel <> nil then
+  begin
+    oldLabel.Enabled := False;
+  end;
+  btn := Sender as TButton;
+  newLabel := getLabelByCaption(btn.Caption);
+  if newLabel <> nil then
+  begin
+      activated := newLabel.Caption;
+      newLabel.Enabled := True
+  end;
+end;
+
+function Tfrm.getLabelByCaption(name: string): TLabel;
+var
+  lowerName: string;
+begin
+  lowerName := LowerCase(name);
+
+  if lowerName = 'vermelho' then
+    Result := lblRed
+  else if lowerName = 'amarelo' then
+    Result := lblYellow
+  else if lowerName = 'verde' then
+    Result := lblGreen
+  else
+    Result := nil;
+end;
+
+end.
+

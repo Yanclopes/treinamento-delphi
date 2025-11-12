@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2025/11/12 09:28:28.064,C:\Users\Yan.lopes\Desktop\gerenciador atividades\ProjectGroup2.groupproj=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\ProjectGroup2.groupproj</Transaction>
+    <Transaction>2025/11/12 09:33:27.581,C:\Users\Yan.lopes\Desktop\gerenciador atividades\gerenciador
+geranciadoAtividades.groupproj=C:\Users\Yan.lopes\Desktop\gerenciador atividades\ProjectGroup2.groupproj</Transaction>
+    <Transaction>2025/11/12 09:33:40.254,C:\Users\Yan.lopes\Desktop\gerenciador atividades\GerenciadorAtividades.groupproj=C:\Users\Yan.lopes\Desktop\gerenciador atividades\gerenciador
+geranciadoAtividades.groupproj</Transaction>
+  </Transactions>
+  <Default.Personality>
+    <Projects ActiveProject="C:\Users\Yan.lopes\Desktop\gerenciador atividades\gerenciador.dproj"/>
+  </Default.Personality>
+</BorlandProject>

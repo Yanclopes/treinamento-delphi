@@ -1,0 +1,61 @@
+﻿unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, StdCtrls;
+
+type
+  Tfrm = class(TForm)
+    btn: TButton;
+    edt: TEdit;
+    procedure btnClick(Sender: TObject);
+  private
+    function EhPalindromo(const Palavra: string): Boolean;
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm.btnClick(Sender: TObject);
+begin
+  if EhPalindromo(edt.Text) then
+    ShowMessage('� um palindromo')
+  else
+    ShowMessage('n�o � um palindromo');
+end;
+
+function Tfrm.EhPalindromo(const Palavra: string): Boolean;
+var
+  i, j: Integer;
+  s: string;
+begin
+  s := LowerCase(Trim(Palavra));
+
+  i := 1;
+  j := Length(s);
+
+  Result := True;
+  while i < j do
+  begin
+
+    if s[i] <> s[j] then
+    begin
+      Result := False;
+      Exit;
+    end;
+
+    Inc(i);
+    Dec(j);
+  end;
+end;
+
+end.

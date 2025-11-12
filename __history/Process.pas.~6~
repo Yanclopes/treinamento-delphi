@@ -1,0 +1,71 @@
+unit Process;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ShellAPI;
+
+type
+  TFrm = class(TForm)
+    lblCapitulo: TLabel;
+    lblNumero: TLabel;
+    edtCapitulo: TEdit;
+    edtNumero: TEdit;
+    btn: TButton;
+    procedure btnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: TFrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrm.btnClick(Sender: TObject);
+var
+  sCapitulo, sNumero: Integer;
+  sNomeBase, sNomeArquivo, sCaminhoExe: string;
+  sDiretorioBase, sSubPastaRelativa: string;
+begin
+  if (not TryStrToInt(edtCapitulo.Text, sCapitulo)) or (not TryStrToInt(lblNumero.Text, sNumero)) then
+  begin
+    ShowMessage('Por favor, preencha o capítulo e a atividade.');
+    Exit;
+  end;
+  sNomeBase := IntToStr(sCapitulo)  + '.' + IntToStr(sNumero);
+  sNomeBase := StringReplace(sNomeBase, '.', '_', [rfReplaceAll]);
+
+  sNomeArquivo := 'atividade' + sNomeBase + '.exe';
+
+  sDiretorioBase := ExtractFilePath(Application.ExeName);
+
+  sSubPastaRelativa := 'Release\Win32';
+
+  sCaminhoExe := IncludeTrailingPathDelimiter(sDiretorioBase);
+  sCaminhoExe := sCaminhoExe + sSubPastaRelativa;
+  sCaminhoExe := IncludeTrailingPathDelimiter(sCaminhoExe);
+  sCaminhoExe := sCaminhoExe + sNomeArquivo;
+
+  if not FileExists(sCaminhoExe) then
+  begin
+    ShowMessage('Atividade não encontrada em: ' + sCaminhoExe);
+    Exit;
+  end;
+  ShellExecute(
+    Handle,
+    'open',
+    PChar(sCaminhoExe),
+    nil,
+    nil,
+    SW_SHOWNORMAL
+  );
+
+end;
+
+end.

@@ -1,0 +1,64 @@
+﻿unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, StdCtrls;
+
+type
+  Tfrm = class(TForm)
+    lblA: TLabel;
+    lblB: TLabel;
+    lblC: TLabel;
+    edtA: TEdit;
+    edtC: TEdit;
+    edtB: TEdit;
+    btn: TButton;
+    procedure btnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm.btnClick(Sender: TObject);
+var
+  vA, vB, vC: Integer;
+  vX1, vX2, vDelta: Double;
+begin
+  if (not TryStrToInt(edtA.Text, vA)) or (not TryStrToInt(edtB.Text, vB) or (not TryStrToInt(edtC.Text, vC))) then
+  begin
+    ShowMessage('Verifique os valores e tente novamente!');
+    Exit;
+  end;
+
+  if vA = 0 then
+  begin
+    ShowMessage('A n�o pode ser igual a 0');
+    Exit;
+  end;
+
+  vDelta := Sqr(vB) - (4 * vA * vC);
+  if vDelta < 0 then
+  begin
+    ShowMessage('N�o existe raiz');
+    Exit;
+  end;
+
+  vX1 := ((-1 * vB) + Sqrt(vDelta)) / (2 * vA);
+  vX2 := ((-1 * vB) - Sqrt(vDelta)) / (2 * vA);
+
+  ShowMessage('x1: ' + FloatToStr(vX1)  + sLineBreak +
+              'x2: ' + FloatToStr(vX2)
+  );
+end;
+
+end.

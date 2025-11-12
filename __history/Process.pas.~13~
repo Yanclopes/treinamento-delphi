@@ -1,0 +1,90 @@
+unit Process;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ShellAPI;
+
+type
+  TFrm = class(TForm)
+    lblCapitulo: TLabel;
+    lblNumero: TLabel;
+    edtCapitulo: TEdit;
+    edtNumero: TEdit;
+    btn: TButton;
+    procedure btnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: TFrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrm.btnClick(Sender: TObject);
+var
+  sCapitulo, sNumero: Integer;
+  sNomeBase, sNomeArquivo, sCaminhoExe: string;
+  sDiretorioBaseExe, sSubPastaRelativa, sRaizDoProjeto: string;
+begin
+  if (not TryStrToInt(edtCapitulo.Text, sCapitulo)) or (not TryStrToInt(edtNumero.Text, sNumero)) then
+  begin
+    ShowMessage('Por favor, preencha o capítulo e a atividade com números válidos.');
+    Exit;
+  end;
+
+  sNomeBase := IntToStr(sCapitulo) + '.' + IntToStr(sNumero);
+  sNomeBase := StringReplace(sNomeBase, '.', '_', [rfReplaceAll]);
+  sNomeArquivo := 'atividade' + sNomeBase + '.exe';
+
+  // --- INÍCIO DA DEPURAÇÃO ---
+
+  // 1. Onde o EXE está AGORA?
+  sDiretorioBaseExe := ExtractFilePath(Application.ExeName);
+
+  // 2. Tenta voltar 2 pastas
+  sRaizDoProjeto := ExtractFilePath(ExtractFilePath(sDiretorioBaseExe));
+
+  // 3. A subpasta que queremos
+  sSubPastaRelativa := 'Release\Win32';
+
+  // 4. Monta o caminho
+  sCaminhoExe := IncludeTrailingPathDelimiter(sRaizDoProjeto);
+  sCaminhoExe := sCaminhoExe + sSubPastaRelativa;
+  sCaminhoExe := IncludeTrailingPathDelimiter(sCaminhoExe);
+  sCaminhoExe := sCaminhoExe + sNomeArquivo;
+
+  // --- A LINHA MAIS IMPORTANTE ---
+  // Vamos exibir todas as nossas variáveis de caminho
+  ShowMessage('== DEBUG DE CAMINHOS ==' + #13#10 +
+              'Onde eu estou (Base EXE): ' + sDiretorioBaseExe + #13#10 +
+              'Raiz (voltando 2): ' + sRaizDoProjeto + #13#10 +
+              'Tentativa final: ' + sCaminhoExe);
+  // #13#10 é uma quebra de linha
+
+  // --- FIM DA DEPURAÇÃO ---
+
+  // 5. Verifique e execute
+  if not FileExists(sCaminhoExe) then
+  begin
+    ShowMessage('Atividade não encontrada em: ' + sCaminhoExe);
+    Exit;
+  end;
+
+  ShellExecute(
+    Handle,
+    'open',
+    PChar(sCaminhoExe),
+    nil,
+    nil,
+    SW_SHOWNORMAL
+  );
+end;
+
+end.

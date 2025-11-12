@@ -1,0 +1,360 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{0CF11DED-5AB0-45B3-B5B5-6799BFFE24CC}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="gerenciador.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="2.1\atividade2_1.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="2.2\atividade2_2.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="2.3\atividade2_3.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="2.4\atividade2_4.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="3.1\atividade3_1.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="3.2\atividade3_2.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="3.3\atividade3_3.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="4.1\atividade4_1.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="4.2\atividade4_2.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="4.3\atividade4_3.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="4.4\atividade4_4.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="4.5\atividade4_5.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="5.1\atividade5_1.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="5.2\atividade5_2.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="5.3\atividade5_3.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="5.4\atividade5_4.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="6.1\atividade6_1.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="6.2\atividade6_2.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="6.3\atividade6_3.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="6.4\atividade6_4.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="7.1\atividade7_1.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="7.2\atividade7_2.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="7.3\atividade7_3.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="7.4\atividade7_4.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="8.1\atividade8_1.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="8.2\atividade8_2.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="8.3\atividade8_3.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="gerenciador">
+			<MSBuild Projects="gerenciador.dproj"/>
+		</Target>
+		<Target Name="gerenciador:Clean">
+			<MSBuild Projects="gerenciador.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="gerenciador:Make">
+			<MSBuild Projects="gerenciador.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade2_1">
+			<MSBuild Projects="2.1\atividade2_1.dproj"/>
+		</Target>
+		<Target Name="atividade2_1:Clean">
+			<MSBuild Projects="2.1\atividade2_1.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade2_1:Make">
+			<MSBuild Projects="2.1\atividade2_1.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade2_2">
+			<MSBuild Projects="2.2\atividade2_2.dproj"/>
+		</Target>
+		<Target Name="atividade2_2:Clean">
+			<MSBuild Projects="2.2\atividade2_2.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade2_2:Make">
+			<MSBuild Projects="2.2\atividade2_2.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade2_3">
+			<MSBuild Projects="2.3\atividade2_3.dproj"/>
+		</Target>
+		<Target Name="atividade2_3:Clean">
+			<MSBuild Projects="2.3\atividade2_3.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade2_3:Make">
+			<MSBuild Projects="2.3\atividade2_3.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade2_4">
+			<MSBuild Projects="2.4\atividade2_4.dproj"/>
+		</Target>
+		<Target Name="atividade2_4:Clean">
+			<MSBuild Projects="2.4\atividade2_4.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade2_4:Make">
+			<MSBuild Projects="2.4\atividade2_4.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade3_1">
+			<MSBuild Projects="3.1\atividade3_1.dproj"/>
+		</Target>
+		<Target Name="atividade3_1:Clean">
+			<MSBuild Projects="3.1\atividade3_1.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade3_1:Make">
+			<MSBuild Projects="3.1\atividade3_1.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade3_2">
+			<MSBuild Projects="3.2\atividade3_2.dproj"/>
+		</Target>
+		<Target Name="atividade3_2:Clean">
+			<MSBuild Projects="3.2\atividade3_2.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade3_2:Make">
+			<MSBuild Projects="3.2\atividade3_2.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade3_3">
+			<MSBuild Projects="3.3\atividade3_3.dproj"/>
+		</Target>
+		<Target Name="atividade3_3:Clean">
+			<MSBuild Projects="3.3\atividade3_3.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade3_3:Make">
+			<MSBuild Projects="3.3\atividade3_3.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade4_1">
+			<MSBuild Projects="4.1\atividade4_1.dproj"/>
+		</Target>
+		<Target Name="atividade4_1:Clean">
+			<MSBuild Projects="4.1\atividade4_1.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade4_1:Make">
+			<MSBuild Projects="4.1\atividade4_1.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade4_2">
+			<MSBuild Projects="4.2\atividade4_2.dproj"/>
+		</Target>
+		<Target Name="atividade4_2:Clean">
+			<MSBuild Projects="4.2\atividade4_2.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade4_2:Make">
+			<MSBuild Projects="4.2\atividade4_2.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade4_3">
+			<MSBuild Projects="4.3\atividade4_3.dproj"/>
+		</Target>
+		<Target Name="atividade4_3:Clean">
+			<MSBuild Projects="4.3\atividade4_3.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade4_3:Make">
+			<MSBuild Projects="4.3\atividade4_3.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade4_4">
+			<MSBuild Projects="4.4\atividade4_4.dproj"/>
+		</Target>
+		<Target Name="atividade4_4:Clean">
+			<MSBuild Projects="4.4\atividade4_4.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade4_4:Make">
+			<MSBuild Projects="4.4\atividade4_4.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade4_5">
+			<MSBuild Projects="4.5\atividade4_5.dproj"/>
+		</Target>
+		<Target Name="atividade4_5:Clean">
+			<MSBuild Projects="4.5\atividade4_5.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade4_5:Make">
+			<MSBuild Projects="4.5\atividade4_5.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade5_1">
+			<MSBuild Projects="5.1\atividade5_1.dproj"/>
+		</Target>
+		<Target Name="atividade5_1:Clean">
+			<MSBuild Projects="5.1\atividade5_1.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade5_1:Make">
+			<MSBuild Projects="5.1\atividade5_1.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade5_2">
+			<MSBuild Projects="5.2\atividade5_2.dproj"/>
+		</Target>
+		<Target Name="atividade5_2:Clean">
+			<MSBuild Projects="5.2\atividade5_2.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade5_2:Make">
+			<MSBuild Projects="5.2\atividade5_2.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade5_3">
+			<MSBuild Projects="5.3\atividade5_3.dproj"/>
+		</Target>
+		<Target Name="atividade5_3:Clean">
+			<MSBuild Projects="5.3\atividade5_3.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade5_3:Make">
+			<MSBuild Projects="5.3\atividade5_3.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade5_4">
+			<MSBuild Projects="5.4\atividade5_4.dproj"/>
+		</Target>
+		<Target Name="atividade5_4:Clean">
+			<MSBuild Projects="5.4\atividade5_4.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade5_4:Make">
+			<MSBuild Projects="5.4\atividade5_4.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade6_1">
+			<MSBuild Projects="6.1\atividade6_1.dproj"/>
+		</Target>
+		<Target Name="atividade6_1:Clean">
+			<MSBuild Projects="6.1\atividade6_1.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade6_1:Make">
+			<MSBuild Projects="6.1\atividade6_1.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade6_2">
+			<MSBuild Projects="6.2\atividade6_2.dproj"/>
+		</Target>
+		<Target Name="atividade6_2:Clean">
+			<MSBuild Projects="6.2\atividade6_2.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade6_2:Make">
+			<MSBuild Projects="6.2\atividade6_2.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade6_3">
+			<MSBuild Projects="6.3\atividade6_3.dproj"/>
+		</Target>
+		<Target Name="atividade6_3:Clean">
+			<MSBuild Projects="6.3\atividade6_3.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade6_3:Make">
+			<MSBuild Projects="6.3\atividade6_3.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade6_4">
+			<MSBuild Projects="6.4\atividade6_4.dproj"/>
+		</Target>
+		<Target Name="atividade6_4:Clean">
+			<MSBuild Projects="6.4\atividade6_4.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade6_4:Make">
+			<MSBuild Projects="6.4\atividade6_4.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade7_1">
+			<MSBuild Projects="7.1\atividade7_1.dproj"/>
+		</Target>
+		<Target Name="atividade7_1:Clean">
+			<MSBuild Projects="7.1\atividade7_1.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade7_1:Make">
+			<MSBuild Projects="7.1\atividade7_1.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade7_2">
+			<MSBuild Projects="7.2\atividade7_2.dproj"/>
+		</Target>
+		<Target Name="atividade7_2:Clean">
+			<MSBuild Projects="7.2\atividade7_2.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade7_2:Make">
+			<MSBuild Projects="7.2\atividade7_2.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade7_3">
+			<MSBuild Projects="7.3\atividade7_3.dproj"/>
+		</Target>
+		<Target Name="atividade7_3:Clean">
+			<MSBuild Projects="7.3\atividade7_3.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade7_3:Make">
+			<MSBuild Projects="7.3\atividade7_3.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade7_4">
+			<MSBuild Projects="7.4\atividade7_4.dproj"/>
+		</Target>
+		<Target Name="atividade7_4:Clean">
+			<MSBuild Projects="7.4\atividade7_4.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade7_4:Make">
+			<MSBuild Projects="7.4\atividade7_4.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade8_1">
+			<MSBuild Projects="8.1\atividade8_1.dproj"/>
+		</Target>
+		<Target Name="atividade8_1:Clean">
+			<MSBuild Projects="8.1\atividade8_1.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade8_1:Make">
+			<MSBuild Projects="8.1\atividade8_1.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade8_2">
+			<MSBuild Projects="8.2\atividade8_2.dproj"/>
+		</Target>
+		<Target Name="atividade8_2:Clean">
+			<MSBuild Projects="8.2\atividade8_2.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade8_2:Make">
+			<MSBuild Projects="8.2\atividade8_2.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="atividade8_3">
+			<MSBuild Projects="8.3\atividade8_3.dproj"/>
+		</Target>
+		<Target Name="atividade8_3:Clean">
+			<MSBuild Projects="8.3\atividade8_3.dproj" Targets="Clean"/>
+		</Target>
+		<Target Name="atividade8_3:Make">
+			<MSBuild Projects="8.3\atividade8_3.dproj" Targets="Make"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="gerenciador;atividade2_1;atividade2_2;atividade2_3;atividade2_4;atividade3_1;atividade3_2;atividade3_3;atividade4_1;atividade4_2;atividade4_3;atividade4_4;atividade4_5;atividade5_1;atividade5_2;atividade5_3;atividade5_4;atividade6_1;atividade6_2;atividade6_3;atividade6_4;atividade7_1;atividade7_2;atividade7_3;atividade7_4;atividade8_1;atividade8_2;atividade8_3"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="gerenciador:Clean;atividade2_1:Clean;atividade2_2:Clean;atividade2_3:Clean;atividade2_4:Clean;atividade3_1:Clean;atividade3_2:Clean;atividade3_3:Clean;atividade4_1:Clean;atividade4_2:Clean;atividade4_3:Clean;atividade4_4:Clean;atividade4_5:Clean;atividade5_1:Clean;atividade5_2:Clean;atividade5_3:Clean;atividade5_4:Clean;atividade6_1:Clean;atividade6_2:Clean;atividade6_3:Clean;atividade6_4:Clean;atividade7_1:Clean;atividade7_2:Clean;atividade7_3:Clean;atividade7_4:Clean;atividade8_1:Clean;atividade8_2:Clean;atividade8_3:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="gerenciador:Make;atividade2_1:Make;atividade2_2:Make;atividade2_3:Make;atividade2_4:Make;atividade3_1:Make;atividade3_2:Make;atividade3_3:Make;atividade4_1:Make;atividade4_2:Make;atividade4_3:Make;atividade4_4:Make;atividade4_5:Make;atividade5_1:Make;atividade5_2:Make;atividade5_3:Make;atividade5_4:Make;atividade6_1:Make;atividade6_2:Make;atividade6_3:Make;atividade6_4:Make;atividade7_1:Make;atividade7_2:Make;atividade7_3:Make;atividade7_4:Make;atividade8_1:Make;atividade8_2:Make;atividade8_3:Make"/>
+		</Target>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')" Project="$(BDS)\Bin\CodeGear.Group.Targets"/>
+	</Project>

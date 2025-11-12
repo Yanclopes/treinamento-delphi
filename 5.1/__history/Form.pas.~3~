@@ -1,0 +1,36 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, StdCtrls;
+
+type
+  Tfrm = class(TForm)
+    btn: TButton;
+    lbl: TLabel;
+    procedure btnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm.btnClick(Sender: TObject);
+begin
+  if lbl.Enabled then
+    btn.Caption := 'Desativado'
+  else
+    btn.Caption := 'Ativo';
+  lbl.Enabled := not lbl.Enabled;
+end;
+
+end.

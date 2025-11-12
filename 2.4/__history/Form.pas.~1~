@@ -1,0 +1,98 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, StdCtrls;
+
+type
+  TConfig = record
+    Background: TColor;
+    Color: TColor;
+    Size: integer;
+    FontFamily: string;
+  end;
+
+  Tfrm = class(TForm)
+    lbl: TLabel;
+    background: TGroupBox;
+    color: TGroupBox;
+    size: TGroupBox;
+    fontFamily: TGroupBox;
+    bgBtnOne: TButton;
+    bgBtnTwo: TButton;
+    bgBtnThree: TButton;
+    clBtnOne: TButton;
+    clBtnTwo: TButton;
+    clBtnThree: TButton;
+    szBtnOne: TButton;
+    szBtnTwo: TButton;
+    szBtnThree: TButton;
+    ffBtnOne: TButton;
+    ffBtnTwo: TButton;
+    ffBtnThree: TButton;
+    procedure click(Sender: TObject);
+  private
+    function getConfig(option: integer):TConfig;
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm.click(Sender: TObject);
+var 
+  btn: TButton;
+  gpbox: TGroupBox;
+  option: TConfig;
+begin
+  btn := Sender as TButton;
+  option := getConfig(StrToInt(btn.Caption));
+  gpbox := btn.Parent as TGroupBox;
+  if gpbox.Caption = 'Background' then
+    begin
+      lbl.Transparent := false;
+      lbl.Color := option.Background;
+    end
+  else if gpbox.Caption = 'Cor' then
+    lbl.Font.Color := option.Color
+  else if gpbox.Caption = 'Tamanho' then
+    lbl.Font.Size := option.Size
+  else
+    lbl.Font.Name := option.FontFamily;
+end;
+
+function Tfrm.getConfig(option: integer): TConfig;
+begin
+  case option of
+    1:
+    begin
+      Result.Background := clWhite;
+      Result.Color := clBlack;
+      Result.Size := 10;
+      Result.fontFamily := 'Arial';
+    end;
+    2:
+    begin
+      Result.Background := clGreen;
+      Result.Color := clRed;   
+      Result.Size := 24;
+      Result.fontFamily := 'Verdana';
+    end;    
+  else
+    begin
+      Result.Background := clBlack;
+      Result.Color := clWhite;
+      Result.Size := 12;
+      Result.fontFamily := 'Tahoma';
+    end;
+  end;
+end;
+
+end.

@@ -1,0 +1,35 @@
+unit gerenciador;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ShellAPI, System;
+
+type
+  TFrm = class(TForm)
+    lblCapitulo: TLabel;
+    lblNumero: TLabel;
+    edtCapitulo: TEdit;
+    edtNumero: TEdit;
+    btn: TButton;
+    procedure processTask(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: TFrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrm.processTask(Sender: TObject);
+begin
+  
+end;
+
+end.

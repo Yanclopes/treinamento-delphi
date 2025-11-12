@@ -1,0 +1,79 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, StdCtrls;
+
+type
+  Tfrm = class(TForm)
+    edtA: TEdit;
+    edtB: TEdit;
+    btnSum: TButton;
+    btnSubstration: TButton;
+    btnMultiplicate: TButton;
+    btnDivision: TButton;
+    lbl: TLabel;
+    procedure edtKeyPress(Sender: TObject; var Key: Char);
+    procedure btnCalc(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm.edtKeyPress(Sender: TObject; var Key: Char);
+var
+  TextoAtual: string;
+begin
+  TextoAtual := (Sender as TEdit).Text;
+  if NOT (Key in ['0'..'9', #8]) then
+  begin
+    if Key = FormatSettings.DecimalSeparator then
+      begin
+        if Pos(FormatSettings.DecimalSeparator, TextoAtual) > 0 then
+        begin
+          Key := #0;
+        end;
+      end
+    else
+      begin
+        Key := #0;
+      end;
+  end
+end;
+
+procedure Tfrm.btnCalc(Sender: TObject);
+var
+a: integer;
+b: integer;
+op: string;
+begin
+  a:= strToInt(edtA.Text);
+  b:= strToInt(edtB.Text);
+  op := (Sender as TButton).Caption;
+
+  if op = '*' then
+    lbl.Caption := FloatToStr(a * b)
+    
+  else if op = '/' then
+    lbl.Caption := FloatToStr(a / b)
+    
+  else if op = '+' then
+    lbl.Caption := FloatToStr(a + b)
+    
+  else if op = '-' then
+    lbl.Caption := FloatToStr(a - b)
+    
+  else
+    ShowMessage('Aconteceu um erro, tente novamente|');
+end;
+end.
