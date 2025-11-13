@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2025/11/13 10:13:28.440,=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/11/13 10:14:08.498,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Form.pas=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/11/13 10:14:08.498,C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Form.dfm=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2025/11/13 10:14:17.310,C:\Users\Yan.lopes\Desktop\gerenciador atividades\Jogo da velha\Form.dfm=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Form.dfm</Transaction>
+    <Transaction>2025/11/13 10:14:17.310,C:\Users\Yan.lopes\Desktop\gerenciador atividades\Jogo da velha\Form.pas=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Form.pas</Transaction>
+    <Transaction>2025/11/13 10:14:21.105,C:\Users\Yan.lopes\Desktop\gerenciador atividades\Jogo da velha\Project1.dproj=C:\Users\Yan.lopes\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

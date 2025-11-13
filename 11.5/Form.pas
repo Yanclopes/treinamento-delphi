@@ -1,0 +1,40 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls;
+
+type
+  Tfrm = class(TForm)
+    btn: TButton;
+    lbl: TLabel;
+    procedure btnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm.btnClick(Sender: TObject);
+var
+  num, i, sum: Integer;
+begin
+  num:= 100 div 2;
+  sum:= 0;
+  for i := 1 to num do
+  begin
+    sum:= sum + (2*i);
+  end;
+  lbl.Caption:= IntToStr(sum);
+end;
+
+end.

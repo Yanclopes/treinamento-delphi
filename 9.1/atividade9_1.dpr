@@ -2,13 +2,13 @@ program atividade9_1;
 
 uses
   Forms,
-  Form in 'Form.pas' {Form1};
+  Form in 'Form.pas' {frm};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(Tfrm, frm);
   Application.Run;
 end.

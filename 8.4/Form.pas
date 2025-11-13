@@ -14,7 +14,6 @@ type
   Tfrm = class(TForm)
     lbl: TLabel;
   function AreaQuadrilatero(V1, V2, V3, V4: TVertice): Real;
-    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public

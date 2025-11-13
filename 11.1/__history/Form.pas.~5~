@@ -1,0 +1,38 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls;
+
+type
+  Tfrm = class(TForm)
+    mmo: TMemo;
+    lbledt: TLabeledEdit;
+    btn: TButton;
+    procedure btnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm.btnClick(Sender: TObject);
+var
+  vN, i: Integer;
+begin
+  vN:= StrToInt(lbledt.Text);
+  mmo.Lines.Clear();
+  for i := 1 to vN do
+    mmo.Lines.Add('-------------------')
+end;
+
+end.

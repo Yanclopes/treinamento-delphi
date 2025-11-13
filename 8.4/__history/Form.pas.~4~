@@ -1,0 +1,41 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Math, StdCtrls;
+
+type
+  TVertice = record
+    X, Y: Integer;
+  end;
+
+  Tfrm = class(TForm)
+    lbl: TLabel;
+  function AreaQuadrilatero(V1, V2, V3, V4: TVertice): Real;
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+function Tfrm.AreaQuadrilatero(V1, V2, V3, V4: TVertice): Real;
+var
+  Soma1, Soma2: Real;
+begin
+  Soma1 := (V1.X * V2.Y) + (V2.X * V3.Y) + (V3.X * V4.Y) + (V4.X * V1.Y);
+  Soma2 := (V1.Y * V2.X) + (V2.Y * V3.X) + (V3.Y * V4.X) + (V4.Y * V1.X);
+  Result := 0.5 * Abs(Soma1 - Soma2);
+end;
+
+
+end.

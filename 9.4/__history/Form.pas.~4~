@@ -1,0 +1,38 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls;
+
+type
+  Tfrm = class(TForm)
+    lbledtA: TLabeledEdit;
+    lbledtB: TLabeledEdit;
+    lbledtC: TLabeledEdit;
+    btn: TButton;
+    procedure btnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm.btnClick(Sender: TObject);
+var
+  vA, vB, vC: Integer;
+begin
+  vA := StrToInt(lbledtA.Text);
+  vB := StrToInt(lbledtB.Text);
+  vC := StrToInt(lbledtC.Text);
+end;
+
+end.

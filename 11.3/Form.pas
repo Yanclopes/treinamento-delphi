@@ -1,0 +1,44 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls;
+
+type
+  Tfrm = class(TForm)
+    lbledt: TLabeledEdit;
+    lbl: TLabel;
+    btn: TButton;
+    procedure btnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm.btnClick(Sender: TObject);
+var
+  num, i, sum: Integer;
+begin
+  if not TryStrToInt(lbledt.Text, num) then
+  begin
+    ShowMessage('Valide o valor e tente novamente.');
+    Exit;
+  end;
+  sum:= 1;
+  for i := 1 to num do
+    sum:= i * sum;
+  lbl.Caption:= IntToStr(sum);
+  lbl.Visible:= True;
+end;
+
+end.

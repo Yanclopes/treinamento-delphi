@@ -1,0 +1,156 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics,
+  Controls, Forms, Dialogs, StdCtrls, ExtCtrls;
+
+type
+  Tfrm = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Button7: TButton;
+    Button8: TButton;
+    Button9: TButton;
+    lblStatus: TLabel;
+    btnReiniciar: TButton;
+    procedure FormCreate(Sender: TObject);
+    procedure BotaoTabuleiroClick(Sender: TObject); // Mudei o nome aqui para ficar claro
+    procedure btnReiniciarClick(Sender: TObject);
+  private
+    { Private declarations }
+    FJogadorAtual: Char; // 'X' ou 'O'
+    FContadorJogadas: Integer; // Para saber se empatou
+    procedure AlternarJogador;
+    function VerificarVencedor: Boolean;
+    procedure ReiniciarJogo;
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: TForm;
+
+implementation
+
+{$R *.dfm}
+
+// Esta função é chamada quando o formulário é criado
+procedure Tfrm.FormCreate(Sender: TObject);
+begin
+  // Faz os 9 botões do tabuleiro usarem o mesmo evento OnClick
+  Button1.OnClick := BotaoTabuleiroClick;
+  Button2.OnClick := BotaoTabuleiroClick;
+  Button3.OnClick := BotaoTabuleiroClick;
+  Button4.OnClick := BotaoTabuleiroClick;
+  Button5.OnClick := BotaoTabuleiroClick;
+  Button6.OnClick := BotaoTabuleiroClick;
+  Button7.OnClick := BotaoTabuleiroClick;
+  Button8.OnClick := BotaoTabuleiroClick;
+  Button9.OnClick := BotaoTabuleiroClick;
+
+  ReiniciarJogo; // Chama a rotina para começar o jogo
+end;
+
+// Esta é a rotina que limpa o tabuleiro e começa o jogo
+procedure Tfrm.ReiniciarJogo;
+var
+  i: Integer;
+begin
+  // Limpa o texto de todos os botões do tabuleiro
+  for i := 0 to ComponentCount - 1 do
+  begin
+    if (Components[i] is TButton) and (TButton(Components[i]) <> btnReiniciar) then
+    begin
+      TButton(Components[i]).Caption := '';
+      TButton(Components[i]).Enabled := True; // Reativa o botão
+    end;
+  end;
+
+  FJogadorAtual := 'X'; // Sempre começa com 'X'
+  FContadorJogadas := 0;
+  lblStatus.Caption := 'Vez do Jogador: X';
+end;
+
+// Este é o evento do botão "Reiniciar"
+procedure Tfrm.btnReiniciarClick(Sender: TObject);
+begin
+  ReiniciarJogo;
+end;
+
+// Esta é a função que troca o jogador
+procedure Tfrm.AlternarJogador;
+begin
+  FContadorJogadas := FContadorJogadas + 1;
+
+  if FJogadorAtual = 'X' then
+    FJogadorAtual := 'O'
+  else
+    FJogadorAtual := 'X';
+
+  lblStatus.Caption := 'Vez do Jogador: ' + FJogadorAtual;
+end;
+
+// ESTA É A FUNÇÃO PRINCIPAL DO JOGO
+procedure Tfrm.BotaoTabuleiroClick(Sender: TObject);
+var
+  BotaoClicado: TButton;
+begin
+  // 1. Identifica qual botão foi clicado
+  BotaoClicado := (Sender as TButton);
+
+  // 2. Verifica se o espaço está vazio
+  if BotaoClicado.Caption = '' then
+  begin
+    // 3. Marca o espaço com o jogador atual
+    BotaoClicado.Caption := FJogadorAtual;
+    BotaoClicado.Enabled := False; // Desativa o botão
+
+    // 4. Verifica se o jogador venceu
+    if VerificarVencedor then
+    begin
+      lblStatus.Caption := 'O JOGADOR ' + FJogadorAtual + ' VENCEU!';
+      ShowMessage('O Jogador ' + FJogadorAtual + ' venceu!');
+      ReiniciarJogo; // Reinicia após o aviso
+    end
+    else if FContadorJogadas = 8 then // 8 porque começa em 0 (9 jogadas)
+    begin
+      // 5. Verifica se deu empate
+      lblStatus.Caption := 'DEU EMPATE!';
+      ShowMessage('Deu empate!');
+      ReiniciarJogo;
+    end
+    else
+    begin
+      // 6. Se ninguém venceu, passa a vez
+      AlternarJogador;
+    end;
+  end;
+end;
+
+// Esta função verifica todas as 8 condições de vitória
+function Tfrm.VerificarVencedor: Boolean;
+begin
+  Result := False; // Assume que ninguém venceu ainda
+
+  // Checa Linhas Horizontais
+  if (Button1.Caption = FJogadorAtual) and (Button2.Caption = FJogadorAtual) and (Button3.Caption = FJogadorAtual) then Result := True;
+  if (Button4.Caption = FJogadorAtual) and (Button5.Caption = FJogadorAtual) and (Button6.Caption = FJogadorAtual) then Result := True;
+  if (Button7.Caption = FJogadorAtual) and (Button8.Caption = FJogadorAtual) and (Button9.Caption = FJogadorAtual) then Result := True;
+
+  // Checa Linhas Verticais
+  if (Button1.Caption = FJogadorAtual) and (Button4.Caption = FJogadorAtual) and (Button7.Caption = FJogadorAtual) then Result := True;
+  if (Button2.Caption = FJogadorAtual) and (Button5.Caption = FJogadorAtual) and (Button8.Caption = FJogadorAtual) then Result := True;
+  if (Button3.Caption = FJogadorAtual) and (Button6.Caption = FJogadorAtual) and (Button9.Caption = FJogadorAtual) then Result := True;
+
+  // Checa Diagonais
+  if (Button1.Caption = FJogadorAtual) and (Button5.Caption = FJogadorAtual) and (Button9.Caption = FJogadorAtual) then Result := True;
+  if (Button3.Caption = FJogadorAtual) and (Button5.Caption = FJogadorAtual) and (Button7.Caption = FJogadorAtual) then Result := True;
+end;
+
+end.

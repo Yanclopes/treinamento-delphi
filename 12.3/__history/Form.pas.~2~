@@ -1,0 +1,43 @@
+unit Form;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, ExtCtrls;
+
+type
+  Tfrm = class(TForm)
+    lbled: TLabeledEdit;
+    btn: TButton;
+    procedure btnClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frm: Tfrm;
+
+implementation
+
+{$R *.dfm}
+
+procedure Tfrm.btnClick(Sender: TObject);
+var
+  newText, oldText: string;
+  count: Integer;
+begin
+  oldText:= lbled.Text;
+  newText:= StringReplace(
+    oldText,
+    '.',
+    '',
+    [rfReplaceAll]
+  );
+  count:= Length(oldText) - Length(newText);
+  lbled.EditLabel.Caption:= newText;
+end;
+
+end.
